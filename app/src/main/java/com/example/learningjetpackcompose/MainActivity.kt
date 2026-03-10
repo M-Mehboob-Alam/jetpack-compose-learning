@@ -15,8 +15,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -41,6 +43,8 @@ class MainActivity : ComponentActivity() {
                         onClick = { Log.v("TAG",    "Filled Button Cliked")},
                         onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")},
                         onClickElevated = { Log.v("TAG",    "Elevated Button Cliked")},
+                        onClickOutlinedButton = { Log.v("TAG",    "Outlined Button Cliked")},
+                        onClickTextButton = { Log.v("TAG",    "Text Button Cliked")},
 
                     )
                 }
@@ -54,6 +58,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier,
              onClick: () -> Unit,
              onClickTonal: () -> Unit,
              onClickElevated: () -> Unit,
+             onClickOutlinedButton: () -> Unit,
+             onClickTextButton: () -> Unit
 ) {
     Column(
         modifier = Modifier.padding(all = 16.dp)
@@ -99,6 +105,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier,
             ) {
             Text(text = "elevated button")
         }
+//      Outlined Button
+        OutlinedButton(onClick = {onClickOutlinedButton()}) {
+            Text(text = "Outlined Button")
+        }
+//        Text Button
+        TextButton(onClick = {onClickTextButton()}) {
+            Text(text = "Text Button")
+        }
     }
 }
 
@@ -110,6 +124,8 @@ fun GreetingPreview() {
             ,onClick = { Log.v("TAgy",    "Filled Button Cliked")}
             ,onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")}
             ,onClickElevated = { Log.v("TAG",    "Elevated Button Cliked")}
+            ,onClickOutlinedButton = { Log.v("TAG",    "Outlined Button Cliked")}
+            ,onClickTextButton = { Log.v("TAG",    "Text Button Cliked")}
 
         )
     }
