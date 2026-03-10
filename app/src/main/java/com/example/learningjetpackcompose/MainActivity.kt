@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -36,7 +38,9 @@ class MainActivity : ComponentActivity() {
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding,),
-                            onClick = { Log.v("TAG",    "Filled Button Cliked")}
+                        onClick = { Log.v("TAG",    "Filled Button Cliked")},
+                        onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")},
+                        onClickElevated = { Log.v("TAG",    "Elevated Button Cliked")},
 
                     )
                 }
@@ -46,7 +50,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier,onClick: () -> Unit) {
+fun Greeting(name: String, modifier: Modifier = Modifier,
+             onClick: () -> Unit,
+             onClickTonal: () -> Unit,
+             onClickElevated: () -> Unit,
+) {
     Column(
         modifier = Modifier.padding(all = 16.dp)
             .border(5.dp,Color.Red)
@@ -82,8 +90,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier,onClick: () -> Unit) {
             Text(text = "Filled Button")
         }
 //        FilledTonol Button
-        FilledTonalButton(onClick = {onClick()}) {
+        FilledTonalButton(onClick = {onClickTonal()}) {
             Text(text = "FilledTonal Button")
+        }
+//        elevated button
+        ElevatedButton(onClick = {onClickElevated()},
+            elevation = ButtonDefaults.elevatedButtonElevation(10.dp)
+            ) {
+            Text(text = "elevated button")
         }
     }
 }
@@ -92,6 +106,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier,onClick: () -> Unit) {
 @Composable
 fun GreetingPreview() {
     LearningJetpackComposeTheme {
-        Greeting("Android",onClick = { Log.v("TAgy",    "Filled Button Cliked")})
+        Greeting("Android"
+            ,onClick = { Log.v("TAgy",    "Filled Button Cliked")}
+            ,onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")}
+            ,onClickElevated = { Log.v("TAG",    "Elevated Button Cliked")}
+
+        )
     }
 }
