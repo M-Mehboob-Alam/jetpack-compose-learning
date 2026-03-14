@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
 //                        mutableStateOf("")
 //                    }
 
-                        RowUi(modifier = Modifier.padding(innerPadding,))
+                        BoxLayout(modifier = Modifier.padding(innerPadding,))
 
 //                    Greeting(
 //                        name = "Android",
