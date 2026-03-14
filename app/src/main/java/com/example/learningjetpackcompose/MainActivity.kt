@@ -1,5 +1,6 @@
 package com.example.learningjetpackcompose
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -43,6 +44,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             LearningJetpackComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                     var text by remember {
+//                        mutableStateOf("")
+//                    }
+
+
+
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding,),
@@ -59,6 +66,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnrememberedMutableState")
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier,
              onClick: () -> Unit,
@@ -130,6 +138,35 @@ fun Greeting(name: String, modifier: Modifier = Modifier,
                 text = newValue
             }
         )
+
+        //  learning state
+        var count  = remember {
+            mutableStateOf(0);
+        }
+
+        Text(text = "Counter ${count.value}")
+        Button(onClick = {
+            count.value ++
+            Log.v("TAG", "count ${count.value}")
+        }) {
+            Text(text = "Increase Counter ")
+        }
+//        stateless textfield
+//        @Composable
+//        fun stateLessTextField(
+//            text:  String,
+//            onTextChanged : (String) -> Unit
+//        ){
+//            TextField(
+//                value = text,
+//                onValueChange = onTextChanged,
+//                label = {
+//                    Text(text = "Enter your name")
+//                }
+//            )
+//            Text(text =  "Welcome $text")
+//        }
+
     }
 }
 
