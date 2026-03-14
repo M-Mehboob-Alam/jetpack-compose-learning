@@ -48,18 +48,18 @@ class MainActivity : ComponentActivity() {
 //                        mutableStateOf("")
 //                    }
 
+                        RowUi(modifier = Modifier.padding(innerPadding,))
 
-
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding,),
-                        onClick = { Log.v("TAG",    "Filled Button Cliked")},
-                        onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")},
-                        onClickElevated = { Log.v("TAG",    "Elevated Button Cliked")},
-                        onClickOutlinedButton = { Log.v("TAG",    "Outlined Button Cliked")},
-                        onClickTextButton = { Log.v("TAG",    "Text Button Cliked")},
-
-                    )
+//                    Greeting(
+//                        name = "Android",
+//                        modifier = Modifier.padding(innerPadding,),
+//                        onClick = { Log.v("TAG",    "Filled Button Cliked")},
+//                        onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")},
+//                        onClickElevated = { Log.v("TAG",    "Elevated Button Cliked")},
+//                        onClickOutlinedButton = { Log.v("TAG",    "Outlined Button Cliked")},
+//                        onClickTextButton = { Log.v("TAG",    "Text Button Cliked")},
+//
+//                    )
                 }
             }
         }
