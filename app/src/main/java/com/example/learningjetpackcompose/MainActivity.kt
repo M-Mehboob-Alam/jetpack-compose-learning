@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity() {
 //                        mutableStateOf("")
 //                    }
 
-                        ColumnVerticalScroll(modifier = Modifier.padding(innerPadding,))
+                        AppLazyColumn(modifier = Modifier.padding(innerPadding,))
 //                        BoxLayout(modifier = Modifier.padding(innerPadding,))
 
 //                    Greeting(
