@@ -79,11 +79,11 @@ class MainActivity : ComponentActivity() {
 //                        mutableStateOf("")
 //                    }
 
-                        LazyColumnStickyHeader(modifier = Modifier.padding(innerPadding,))
+                        learningNavigation(modifier = Modifier.padding(innerPadding))
 //                        BoxLayout(modifier = Modifier.padding(innerPadding,))
 
 //                    Greeting(
-//                        name = "Android",
+//                        name = "Android",$
 //                        modifier = Modifier.padding(innerPadding,),
 //                        onClick = { Log.v("TAG",    "Filled Button Cliked")},
 //                        onClickTonal = { Log.v("TAG",    "Tonal Button Cliked")},
