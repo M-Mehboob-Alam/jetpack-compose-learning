@@ -61,15 +61,15 @@ class MainActivity : ComponentActivity() {
             LearningJetpackComposeTheme {
                 Scaffold(
 
-                    topBar = {
-                       AppTopBar()
-                    },
-                    bottomBar = {
-                       AppBottomBar()
-                    },
-                    floatingActionButton = {
-                        FloatingActionButton(onClick = {}) { }
-                    },
+//                    topBar = {
+//                       AppTopBar()
+//                    },
+//                    bottomBar = {
+//                       AppBottomBar()
+//                    },
+//                    floatingActionButton = {
+//                        FloatingActionButton(onClick = {}) { }
+//                    },
 
                     modifier = Modifier.fillMaxSize(),
 
@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity() {
 //                        mutableStateOf("")
 //                    }
 
-                        AppLazyColumn(modifier = Modifier.padding(innerPadding,))
+                        LazyColumnStickyHeader(modifier = Modifier.padding(innerPadding,))
 //                        BoxLayout(modifier = Modifier.padding(innerPadding,))
 
 //                    Greeting(
