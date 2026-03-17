@@ -50,6 +50,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
 import com.example.learningjetpackcompose.navigation.AppNavGraph
+import com.example.learningjetpackcompose.navigation.BottomNavigationBar
 import com.example.learningjetpackcompose.ui.theme.LearningJetpackComposeTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,14 +62,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LearningJetpackComposeTheme {
+                val  navController  = rememberNavController()
                 Scaffold(
 
 //                    topBar = {
 //                       AppTopBar()
 //                    },
-//                    bottomBar = {
-//                       AppBottomBar()
-//                    },
+                    bottomBar = {
+                       BottomNavigationBar(modifier = Modifier, navController = navController)
+                    },
 //                    floatingActionButton = {
 //                        FloatingActionButton(onClick = {}) { }
 //                    },
@@ -80,8 +82,9 @@ class MainActivity : ComponentActivity() {
 //                     var text by remember {
 //                        mutableStateOf("")
 //                    }
-                        val  navController  = rememberNavController()
+
                     AppNavGraph(modifier = Modifier.padding(innerPadding), navController)
+//                    BottomNavigationBar(modifier = Modifier.padding(innerPadding), navController)
 //                        learningNavigation(modifier = Modifier.padding(innerPadding))
 //                        BoxLayout(modifier = Modifier.padding(innerPadding,))
 
